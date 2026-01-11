@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kingtp AI | Intelligent Chat</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="mouse-light"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="dashboard" id="glass-card">
+        
+        <div class="sidebar">
+            <div class="logo">
+                <div class="logo-circle"></div> KINGTP AI
+            </div>
+            
+            <div class="menu-item active" onclick="location.reload()"><i class="fa-solid fa-comment-dots"></i> New Chat</div>
+            <div class="menu-item" onclick="loadHistory()"><i class="fa-solid fa-clock-rotate-left"></i> History</div>
+            <div class="user-profile">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="user-info">
+                    <h4>{{ user_name }}</h4> 
+                    <span>Online</span>
+                </div>
+                <a href="/logout" class="logout-icon" title="Logout">
+                    <i class="fa-solid fa-power-off"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="chat-area">
+            <div class="chat-header">
+                <h2>Kingtp Assistant</h2>
+                <span class="status-badge">● SYSTEM ACTIVE</span>
+            </div>
+
+            <div id="chat-box">
+                <div class="message bot-msg">
+                    Hello {{ user_name }}! I am Kingtp. How can I assist you today?
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Type your message..." onkeypress="handleEnter(event)">
+                <button onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i> Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password | Kingtp AI</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+    <div id="mouse-light"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="dashboard" id="glass-card" style="align-items: center;">
+        
+        <div class="sidebar" style="background: transparent; border: none; width: 45%;">
+            <div class="logo">
+                <div class="logo-circle"></div> KINGTP AI
+            </div>
+            
+            <h2>Recovery<br>Center</h2>
+            <p>Securely update your credentials to regain access to your account.</p>
+        </div>
+
+        <div class="input-area" style="width: 50%; padding-right: 60px;">
+            <h2 style="color: white; margin-bottom: 30px; font-size: 24px;">RESET PASSWORD</h2>
+
+            {% if message %}
+            <div style="background: rgba(100, 255, 150, 0.2); color: #e0ffe0; padding: 15px; border-radius: 15px; margin-bottom: 20px; text-align: center;">{{ message }}</div>
+            {% endif %}
+
+            <form action="/reset" method="POST" autocomplete="off">
+                <input type="email" name="email" placeholder="Confirm your Email" required autocomplete="off">
+                
+                <input type="password" name="new_password" placeholder="New Password" required autocomplete="new-password">
+
+                <button type="submit">Update Password</button>
+            </form>
+
+            <div class="login-link">
+                <a href="/login">← Back to Login</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/script.js"></script>
+
+</body>
+</html>
